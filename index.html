@@ -1,7 +1,95 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Researcher Portfolio</title>
+
+  <!-- Import IBM Plex Mono -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Global Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "IBM Plex Mono", monospace;
+      background-color: #8ACE00;
+      color: #000;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 2px solid #000;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+    nav li {
+      font-weight: 700;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    nav li:hover {
+      transform: scale(1.1);
+    }
+    nav li::after {
+      content: "";
+      height: 2px;
+      background: #000;
+      width: 0;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      transition: width 0.3s ease;
+    }
+    nav li:hover::after {
+      width: 100%;
+    }
+
+    /* Section Layout */
+    section {
+      padding: 6rem 2rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
