@@ -7,13 +7,9 @@
   <title>Kyle James McMahon</title>
 
   <!-- IBM Plex Mono -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* RESET & BASE */
     * {
       margin: 0;
       padding: 0;
@@ -33,7 +29,6 @@
       color: inherit;
     }
 
-    /* SCROLL ARROW */
     .scroll-arrow {
       font-size: 2rem;
       margin-top: 2rem;
@@ -48,22 +43,29 @@
       50% { transform: translateY(8px); }
     }
 
-    /* OFFSET FOR MAIN CONTENT */
     .content {
       margin-left: 4rem;
     }
 
-    /* SECTIONS */
     section {
       padding: 6rem 2rem 4rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
+      text-align: center;
     }
     h1, h2, h3 {
       font-weight: 700;
@@ -75,11 +77,6 @@
       margin-bottom: 1rem;
     }
 
-    /* HERO */
-    #hero {
-      text-align: center;
-      position: relative;
-    }
     #hero h1 {
       font-size: 3rem;
       text-shadow: 2px 2px #000;
@@ -90,7 +87,6 @@
       opacity: 0.9;
     }
 
-    /* BUTTONS */
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -107,7 +103,6 @@
       color: #8ACE00;
     }
 
-    /* PROJECT CARDS */
     .project-card {
       background: rgba(255, 255, 255, 0.2);
       padding: 1.5rem;
@@ -120,7 +115,6 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    /* PUBLICATION LIST */
     .pub-list li {
       margin-bottom: 0.75rem;
       transition: color 0.2s ease;
@@ -130,7 +124,6 @@
       color: #333;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -138,7 +131,6 @@
       opacity: 0.8;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 600px) {
       .sidebar {
         left: 0.5rem;
@@ -158,21 +150,19 @@
 </head>
 <body>
 
-  <!-- MAIN CONTENT AREA -->
   <div class="content">
-    <!-- HOME SECTION -->
-    <section id="hero">
+
+    <!-- HERO -->
+    <section id="hero" class="fade-in">
       <div class="container">
         <h1>Kyle James McMahon</h1>
         <p class="subtitle">Research Associate &amp; Aspiring PhD Candidate</p>
-
-        <!-- Scroll Arrow -->
         <a href="#about" class="scroll-arrow">↓</a>
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about">
+    <!-- ABOUT -->
+    <section id="about" class="fade-in">
       <div class="container">
         <h2>About Me</h2>
         <p>
@@ -180,11 +170,12 @@
           assay development, and outbreak response. With international field deployments and deep expertise in
           lab automation, I translate molecular insights into actionable public health solutions.
         </p>
+        <a href="#research" class="scroll-arrow">↓</a>
       </div>
     </section>
 
-    <!-- RESEARCH SECTION -->
-    <section id="research">
+    <!-- RESEARCH -->
+    <section id="research" class="fade-in">
       <div class="container">
         <h2>Research Highlights</h2>
         <ul>
@@ -192,11 +183,12 @@
           <li><strong>Outbreak Assays:</strong> Designed RT-qPCR/dPCR pipelines for H5N1 milk surveillance (collaborated with MDAR &amp; MDPH) and rapid-response Oropouche assay under simulated outbreak conditions.</li>
           <li><strong>Lab Automation:</strong> Implemented workflow improvements across Agilent Bravo, Hamilton STARlet, Dynamic Devices Lynx, and QuantStudio 7 for enhanced throughput.</li>
         </ul>
+        <a href="#publications" class="scroll-arrow">↓</a>
       </div>
     </section>
 
-    <!-- PUBLICATIONS SECTION -->
-    <section id="publications">
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="fade-in">
       <div class="container">
         <h2>Selected Publications</h2>
         <ul class="pub-list">
@@ -211,5 +203,23 @@
       &copy; 2025 Kyle James McMahon • Designed for PhD Application &amp; Professional Portfolio
     </footer>
   </div>
+
+  <!-- FADE-IN SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
