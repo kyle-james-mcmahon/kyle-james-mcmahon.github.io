@@ -32,19 +32,20 @@
       text-decoration: none;
       color: inherit;
     }
-  .scroll-arrow {
-  font-size: 2rem;
-  margin-top: 2rem;
-  animation: bounce 1.5s infinite;
-  cursor: default;
-  color: #000;
-  user-select: none;
-    }
 
-  /* Bouncing animation */
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+    /* SCROLL ARROW */
+    .scroll-arrow {
+      font-size: 2rem;
+      margin-top: 2rem;
+      animation: bounce 1.5s infinite;
+      cursor: pointer;
+      color: #000;
+      user-select: none;
+      display: inline-block;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
     }
 
     /* OFFSET FOR MAIN CONTENT */
@@ -88,9 +89,6 @@
       margin-top: 1rem;
       opacity: 0.9;
     }
-    <div class="scroll-arrow">
-        ↓
-    </div>
 
     /* BUTTONS */
     .btn {
@@ -167,6 +165,9 @@
       <div class="container">
         <h1>Kyle James McMahon</h1>
         <p class="subtitle">Research Associate &amp; Aspiring PhD Candidate</p>
+
+        <!-- Scroll Arrow -->
+        <a href="#about" class="scroll-arrow">↓</a>
       </div>
     </section>
 
