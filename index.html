@@ -32,6 +32,20 @@
       text-decoration: none;
       color: inherit;
     }
+  .scroll-arrow {
+  font-size: 2rem;
+  margin-top: 2rem;
+  animation: bounce 1.5s infinite;
+  cursor: default;
+  color: #000;
+  user-select: none;
+    }
+
+  /* Bouncing animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+    }
 
     /* OFFSET FOR MAIN CONTENT */
     .content {
@@ -74,6 +88,9 @@
       margin-top: 1rem;
       opacity: 0.9;
     }
+    <div class="scroll-arrow">
+        ↓
+    </div>
 
     /* BUTTONS */
     .btn {
