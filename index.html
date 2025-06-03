@@ -155,27 +155,6 @@
       color: #333;
     }
 
-    /* CONTACT FORM */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border: 2px solid #000;
-      background: rgba(255, 255, 255, 0.8);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 1rem;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #333;
-    }
-
     /* FOOTER */
     footer {
       text-align: center;
@@ -206,20 +185,19 @@
 
   <!-- SIDEBAR NAVIGATION -->
   <div class="sidebar">
-    <a href="#hero">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
+    <a href="home">Home</a>
+    <a href="about">About Me</a>
+    <a href="research">Research</a>
+    <a href="publications">Publications</a>
   </div>
 
   <!-- MAIN CONTENT AREA -->
   <div class="content">
-    <!-- HERO SECTION -->
+    <!-- HOME SECTION -->
     <section id="hero">
       <div class="container">
         <h1>Kyle James McMahon</h1>
-        <p class="subtitle">Translational Research Scientist &amp; Aspiring PhD Candidate</p>
-        <a class="btn" href="#contact">Get in Touch</a>
+        <p class="subtitle">Research Associate &amp; Aspiring PhD Candidate</p>
       </div>
     </section>
 
@@ -255,19 +233,6 @@
           <li><strong>Stachler E, Gnirke A, McMahon K, et al.</strong> Establishing Methods to Monitor Influenza (A)H5N1 Virus in Dairy Cattle Milk, Massachusetts, USA. <em>Emerg Infect Dis.</em> 2025 May;31(13):70–75.</li>
           <li><strong>Kamariza M, McMahon K, Kim L, et al.</strong> Multiplexed detection of febrile infections using CARMEN. <em>Preprint.</em> 2024.</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION (optional) -->
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <form class="contact-form" action="mailto:kylemcmahonwork@gmail.com" method="POST" enctype="text/plain">
-          <input type="text" name="Name" placeholder="Your Name" required />
-          <input type="email" name="Email" placeholder="Your Email" required />
-          <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
-          <button class="btn" type="submit">Send</button>
-        </form>
       </div>
     </section>
 
